@@ -8,7 +8,9 @@ describe Recipe do
   it { should validate_presence_of :servings}
   it { should validate_presence_of :directions}
   it("titleizes the name of an recipe") do
-    recipe = Recipe.create({name: "giant steps", cuisine: "itialian", course: "appetizer", servings: 3, directions: "blah blah"})
+    recipe = Recipe.create({name: "giant steps", cuisine: "italian", course: "appetizer", servings: 3, directions: "blah blah"})
     expect(recipe.name()).to(eq("Giant Steps"))
+    expect(recipe.cuisine()).to(eq("Italian"))
+    expect(recipe.course()).to(eq("Appetizer"))
   end
 end

@@ -10,6 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Really Cool Recipes</h1>
+      </div>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      <%= yield %>
+
+    </div>
   </body>
 </html>

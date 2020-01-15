@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
+    flash[:notice] = "Recipe successfully added!"
       redirect_to recipes_path
     else
       render :new
