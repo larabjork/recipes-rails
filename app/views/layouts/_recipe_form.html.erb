@@ -6,10 +6,10 @@
   <%= f.label :cuisine %>
   <%= f.text_field :cuisine %>
   <%= f.label :course %>
-  <%= f.text_field :course %>
+  <%= f.select :course, options_for_select([['Appetizer', 'appetizer'], ['Salad', 'salad'],['Soup', 'soup'], ['Entree', 'entree'], ['Dessert', 'dessert'],['Snack', 'snack'],['Side dish', 'Side dish'],['Other', 'other']]) %>
   <%= f.label :servings %>
-  <%= f.integer :servings %>
+  <%= f.text_field :servings %>
   <%= f.label :directions %>
-  <%= f.text_field :directions %>
+  <%= f.text_area :directions %>
   <%= f.submit %>
 <% end %>
