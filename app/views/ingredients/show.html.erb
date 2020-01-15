@@ -1,0 +1,25 @@
+<h1><%= @ingredient.name %></h1>
+
+
+<% if @recipe.any? %>
+  <h4>Here are the recipes for this ingredient:</h4>
+
+  <% @recipe.songs.each do |song| %>
+    <ul>
+      <li>
+        <%= link_to song.name, recipe_song_path(@recipe, song) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No songs are listed for this recipe.</p>
+<% end %>
+
+<p><%= link_to "Add a song", new_recipe_song_path(@recipe) %></p>
+
+<p><%= link_to "Edit", edit_recipe_path(@recipe) %></p>
+<p><%= link_to "Delete recipe", recipe_path(@recipe),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to recipes", recipes_path %></p>

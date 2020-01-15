@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @recipe %>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+  <%= f.label :course %>
+  <%= f.text_field :course %>
+  <%= f.label :servings %>
+  <%= f.integer :servings %>
+  <%= f.label :directions %>
+  <%= f.text_field :directions %>
+  <%= f.submit %>
+<% end %>
