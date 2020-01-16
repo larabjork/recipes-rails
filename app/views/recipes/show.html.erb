@@ -1,7 +1,5 @@
 <h1><%= @recipe.name %></h1>
-<h3><%= @recipe.cuisine %></h3>
-<h3><%= @recipe.course %></h3>
-<h3><%= @recipe.servings %></h3>
+<img src= <%= @recipe.img %> alt="">
 <h3><%= @recipe.directions %></h3>
 
 
@@ -10,11 +8,5 @@
   :data => {:confirm => "You sure?",
   :method => "delete"} %></p>
 
-
-  <%= form_for @recipe.add do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-  <% end %>
 
   <p><%= link_to "Return to recipes", recipes_path %></p>

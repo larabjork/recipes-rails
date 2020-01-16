@@ -3,12 +3,8 @@
 <%= form_for @recipe do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.label :cuisine %>
-  <%= f.text_field :cuisine %>
-  <%= f.label :course %>
-  <%= f.select :course, options_for_select([['Appetizer', 'appetizer'], ['Salad', 'salad'],['Soup', 'soup'], ['Entree', 'entree'], ['Dessert', 'dessert'],['Snack', 'snack'],['Side dish', 'Side dish'],['Other', 'other']]) %>
-  <%= f.label :servings %>
-  <%= f.text_field :servings %>
+  <%= f.label :img %>
+  <%= f.text_field :img %>
   <%= f.label :directions %>
   <%= f.text_area :directions %>
   <%= f.submit %>
