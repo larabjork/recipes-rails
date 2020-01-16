@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
 
   def add
     @recipe = Recipe.find(params[:id])
-    ingredient = Ingredient.where(name params[:ingredient].fetch("ingredient")).first
+    ingredient = Ingredient.find(params[:ingredient_id])
     @recipe.ingredients << ingredient
     redirect_to recipes_path
   end

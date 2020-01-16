@@ -1,13 +1,24 @@
+# Rails.application.routes.draw do
+#   root to: 'recipes#index'
+#   resources :recipes do
+#     member do
+#       post :add
+#     end
+#   end
+#   resources :ingredients do
+#     member do
+#       post :add
+#     end
+#   end
+# end
+
+
 Rails.application.routes.draw do
   root to: 'recipes#index'
   resources :recipes do
-    member do
-      post :add
-    end
+    resources :ingredients
   end
   resources :ingredients do
-    member do
-      post :add
-    end
+    resources :recipes
   end
 end
