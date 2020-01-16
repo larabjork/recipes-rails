@@ -9,7 +9,7 @@
   <%= f.text_area :directions %>
   <% for ingredient in Ingredient.all %>
   <%= check_box_tag "[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)%>
-  <%= h ingredient.name %>
+  <%= h ingredient.name %><br />
   <% end %>
   <%= f.submit %>
 <% end %>

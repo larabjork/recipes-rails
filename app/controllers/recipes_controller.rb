@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    if params[:format]
+      @recipes = Recipe.alphabetize
+    else
+      @recipes = Recipe.all
+    end
     render :index
   end
 
@@ -58,9 +62,9 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-# def alphabetize
-#   @recipes = Recipes.all
-#   self. { |a, b| a.name.downcase <=> b.name.downcase }
+  # def alphabetize
+  #   @recipes = Recipes.all
+  #   self. { |a, b| a.name.downcase <=> b.name.downcase }
 
 
   private

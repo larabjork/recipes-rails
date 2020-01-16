@@ -1,5 +1,12 @@
 <h1>Recipes</h1>
 
+<!-- <form>
+  <button type="submit" name="alphabetize" class="btn btn-warning">Alphabetize!</button>
+  <input type="hidden" name="alphabetize">
+</form> -->
+
+  <li><%= link_to "alphabetize", recipes_path("alphabetize") %></li>
+
 <% if @recipes.any? %>
   <ul>
     <% @recipes.each do |recipe| %>

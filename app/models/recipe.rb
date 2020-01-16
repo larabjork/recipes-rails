@@ -4,8 +4,8 @@ class Recipe < ApplicationRecord
   validates :directions, presence: true
   before_save(:titleize_recipe)
 
-  scope :sort_recipes, -> {(
-    select("recipes.name")
+  scope :alphabetize, -> {(
+    select("recipes.name, recipes.id")
     .order("recipes.name")
   )}
 
@@ -13,5 +13,5 @@ class Recipe < ApplicationRecord
     def titleize_recipe
       self.name = self.name.titleize
     end
-    
+
 end
