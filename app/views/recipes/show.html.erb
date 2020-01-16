@@ -4,9 +4,17 @@
 <h3><%= @recipe.servings %></h3>
 <h3><%= @recipe.directions %></h3>
 
+
 <p><%= link_to "Edit", edit_recipe_path(@recipe) %></p>
 <p><%= link_to "Delete", recipe_path(@recipe),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+  :data => {:confirm => "You sure?",
+  :method => "delete"} %></p>
 
-<p><%= link_to "Return to recipes", recipes_path %></p>
+
+  <%= form_for @recipe.add do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+  <% end %>
+
+  <p><%= link_to "Return to recipes", recipes_path %></p>

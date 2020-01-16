@@ -43,6 +43,14 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
     redirect_to ingredients_path
+
+    def add
+      @ingredient = Ingredient.find(params[:id])
+      recipe = Recipe.where(name params[:recipe].fetch("recipe")).first
+      @ingredient.recipes << recipe
+      redirect_to ingredients_path
+    end
+
   end
 
   private
