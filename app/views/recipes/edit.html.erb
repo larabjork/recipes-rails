@@ -1,3 +1,15 @@
 <h1>Edit Recipe</h1>
 
-<%= render "layouts/recipe_form" %>
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :img %>
+  <%= f.text_field :img %>
+  <%= f.label :directions %>
+  <%= f.text_area :directions %>
+  <% for ingredient in Ingredient.all %>
+  <%= check_box_tag "[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)%>
+  <%= h ingredient.name %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
