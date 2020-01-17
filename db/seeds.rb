@@ -17,7 +17,7 @@ p "Created #{Ingredient.count} ingredients"
 Recipe.destroy_all
 
 50.times do |index|
-  Recipe.create!(name: Faker::Food.dish, img: Faker::LoremFlickr.image(search_terms: ['food']), directions: Faker::Food.description)
+  Recipe.create!(name: Faker::Food.dish, img: Faker::LoremFlickr.image(search_terms: ['food', 'dish']), directions: Faker::Food.description)
 end
 
 p "Created #{Recipe.count} recipes"
