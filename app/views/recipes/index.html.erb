@@ -8,11 +8,11 @@
   <p><%= link_to "Alphabetize List", recipes_path("alphabetize") %></p>
 
 <% if @recipes.any? %>
-  <ul>
+
     <% @recipes.each do |recipe| %>
-      <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+      <p><%= link_to recipe.name, recipe_path(recipe) %></p>
     <% end %>
-  </ul>
+
 <% else %>
   <p>There are no recipes yet.</p>
 <% end %>
